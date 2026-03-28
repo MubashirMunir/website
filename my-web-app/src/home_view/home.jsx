@@ -2,8 +2,12 @@ import { useState } from "react";
 import "./home.css";
 
 export default function Home() {
-  const [active, setActive] = useState("home");
 
+  const [active, setActive] = useState("home");
+  const ontap = () => {
+    console.log("Next clicked");
+    setActive("profile"); // example
+  };
   const renderContent = () => {
     switch (active) {
       case "home":
@@ -13,16 +17,27 @@ export default function Home() {
               <div className="hero-text">
                 <p className="tag">Welcome Back</p>
                 <h1>Modern Dashboard Experience</h1>
-                <p className="desc">
-                  Manage your profile, services, and settings from one beautiful
-                  and organized dashboard.
-                </p>
+                <p className="desc">Manage your profile, services, and settings from one beautiful  and organized dashboard.</p>
                 <div className="hero-buttons">
                   <button className="primary-btn">Get Started</button>
                   <button className="secondary-btn">Learn More</button>
                 </div>
               </div>
+              <div className="hero">
+                <div className="hero-text">
+                  ...
 
+                  <div className="row">
+                    <button className="btn1" onClick={ontap}>Next</button>
+                    <button className="btn2">Next</button>
+                  </div>
+
+                </div>
+
+                <div className="hero-card">
+                  ...
+                </div>
+              </div>
               <div className="hero-card">
                 <h3>Quick Overview</h3>
                 <p>Your workspace is looking clean and ready to go.</p>
@@ -101,9 +116,9 @@ export default function Home() {
   return (
     <div className="home-wrapper">
       <header className="header">
-        <div className="logo">MyBrand</div>
+        <div className="logo">Elite HR</div>
         <div className="header-right">
-          <span className="welcome-text">Hello, User</span>
+          <span className="welcome-text">Hello, Mubashir</span>
           <div className="avatar">M</div>
         </div>
       </header>
